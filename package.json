@@ -3,17 +3,22 @@
 	"version": "0.0.1",
 	"private": true,
 	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"dev": "npx tauri dev",
+		"build": "npx tauri build",
+		"tauri": "tauri",
+		"sveltekit:dev": "vite dev",
+		"sveltekit:build": "vite build",
+		"sveltekit:preview": "vite preview",
+		"sveltekit:check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+		"sveltekit:check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "next",
+		"@sveltejs/adapter-static": "^1.0.0-next.43",
 		"@sveltejs/kit": "next",
+		"@tauri-apps/api": "^1.1.0",
+		"@tauri-apps/cli": "^1.1.1",
 		"@typescript-eslint/eslint-plugin": "^5.27.0",
 		"@typescript-eslint/parser": "^5.27.0",
 		"eslint": "^8.16.0",
@@ -28,5 +33,8 @@
 		"typescript": "^4.7.4",
 		"vite": "^3.1.0"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"felte": "^1.2.3"
+	}
 }
