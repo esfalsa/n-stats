@@ -56,7 +56,9 @@
 		// const targetedNode = document.querySelector('.nukestat.nukestat-targeted')?.textContent;
 		// const incomingNode = document.querySelector('.nukestat.nukestat-incoming')?.textContent;
 		const radiationNode = document.querySelector('.nukestat.nukestat-radiation')?.textContent;
-
+		
+		const nationRadiation = parseInt(radiationNode?.substring(0, radiationNode?.indexOf('%RADIATION')) || '0')
+		
 		nukes += parseInt(nukesNode?.substring(0, nukesNode?.indexOf('NUKES')) || '0');
 		shield += parseInt(shieldNode?.substring(0, shieldNode?.indexOf('SHIELD')) || '0');
 		production += parseInt(
@@ -66,8 +68,8 @@
 			interceptsNode?.substring(0, interceptsNode?.indexOf('INTERCEPTS')) || '0'
 		);
 		strikes += parseInt(strikesNode?.substring(0, strikesNode?.indexOf('STRIKES')) || '0');
-		radiation += parseInt(radiationNode?.substring(0, radiationNode?.indexOf('%RADIATION')) || '0');
-		destroyed += radiation == 100 ? 1 : 0;
+		radiation += nationRadiation;
+		destroyed += nationRadiation == 100 ? 1 : 0;
 	}
 </script>
 
