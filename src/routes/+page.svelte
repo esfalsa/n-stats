@@ -11,7 +11,8 @@
 		production = 0,
 		intercepts = 0,
 		strikes = 0,
-		radiation = 0;
+		radiation = 0,
+		destroyed = 0;
 
 	let index = 0;
 
@@ -66,6 +67,7 @@
 		);
 		strikes += parseInt(strikesNode?.substring(0, strikesNode?.indexOf('STRIKES')) || '0');
 		radiation += parseInt(radiationNode?.substring(0, radiationNode?.indexOf('%RADIATION')) || '0');
+		destroyed += radiation == 100 ? 1 : 0;
 	}
 </script>
 
@@ -86,6 +88,8 @@
 		{strikes},
 		<strong>radiation:</strong>
 		{radiation}
+		<strong>destroyed:</strong>
+		{destroyed}
 	</p>
 
 	{#if index < $nations.length}
