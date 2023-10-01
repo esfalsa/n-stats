@@ -46,16 +46,16 @@
 
 		const document = parser.parseFromString(data, 'text/html');
 
-		const nukesNode = document.querySelector('.nukestat.nukestat-nukes')?.textContent;
-		const shieldNode = document.querySelector('.nukestat.nukestat-shield')?.textContent;
-		const productionNode = document.querySelector('.nukestat.nukestat-production')?.textContent;
-		// const targetsNode = document.querySelector('.nukestat.nukestat-targets')?.textContent;
-		// const launchesNode = document.querySelector('.nukestat.nukestat-launches')?.textContent;
-		const interceptsNode = document.querySelector('.nukestat.nukestat-intercepts')?.textContent;
-		const strikesNode = document.querySelector('.nukestat.nukestat-strikes')?.textContent;
-		// const targetedNode = document.querySelector('.nukestat.nukestat-targeted')?.textContent;
-		// const incomingNode = document.querySelector('.nukestat.nukestat-incoming')?.textContent;
-		const radiationNode = document.querySelector('.nukestat.nukestat-radiation')?.textContent;
+		const nukesNode = document.querySelector('.nukestat.nukestat-nukes')?.textContent.replace(/,/g, '');
+		const shieldNode = document.querySelector('.nukestat.nukestat-shield')?.textContent.replace(/,/g, '');
+		const productionNode = document.querySelector('.nukestat.nukestat-production')?.textContent.replace(/,/g, '');
+		// const targetsNode = document.querySelector('.nukestat.nukestat-targets')?.textContent.replace(/,/g, '');
+		// const launchesNode = document.querySelector('.nukestat.nukestat-launches')?.textContent.replace(/,/g, '');
+		const interceptsNode = document.querySelector('.nukestat.nukestat-intercepts')?.textContent.replace(/,/g, '');
+		const strikesNode = document.querySelector('.nukestat.nukestat-strikes')?.textContent.replace(/,/g, '');
+		// const targetedNode = document.querySelector('.nukestat.nukestat-targeted')?.textContent.replace(/,/g, '')
+		// const incomingNode = document.querySelector('.nukestat.nukestat-incoming')?.textContent.replace(/,/g, '');
+		const radiationNode = document.querySelector('.nukestat.nukestat-radiation')?.textContent.replace(/,/g, '');
 		
 		const nationRadiation = parseInt(radiationNode?.substring(0, radiationNode?.indexOf('%RADIATION')) || '0')
 		
